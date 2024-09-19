@@ -10,7 +10,6 @@ int f(int n,int k){
         s++, k+=s;
 
         int sz=q.size();
-        //printf("\nst %d %d\n",s, k);
         while(sz--){
             int t=q.front(); q.pop();
             if(t+1<=500000 && v[t+1]!=s && !fix[t+1]){
@@ -25,12 +24,7 @@ int f(int n,int k){
                 if(v[t*2]==s-1) fix[t*2]=1;
                 v[t*2]=s, q.push(t*2);
             }
-            //printf("%d\n",t);
         }
-        /*for(int i=0;i<=40;i++) printf("%d ",v[i]);
-        printf("\n");
-        for(int i=0;i<=40;i++) printf("%d ",fix[i]);
-        printf("\n");*/
     }
     return -1;
 }
